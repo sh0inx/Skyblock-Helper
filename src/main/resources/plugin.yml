@@ -1,0 +1,6 @@
+name: SkyblockHelper
+version: '${version}'
+main: io.github.sh0inx.skyblockhelper.SkyblockHelper
+api-version: '1.20'
+depend:
+  - "IridiumSkyblock"
