@@ -1,6 +1,7 @@
 package io.github.sh0inx.skyblockhelper;
 
 import com.iridium.iridiumskyblock.api.IridiumSkyblockAPI;
+import io.github.sh0inx.skyblockhelper.listeners.IslandCreationEventListener;
 import io.github.sh0inx.skyblockhelper.managers.ConfigManager;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -34,6 +35,7 @@ public final class SkyblockHelper extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
 
+        registerListeners();
         registerBlockBankItems();
     }
 
@@ -68,5 +70,9 @@ public final class SkyblockHelper extends JavaPlugin {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void registerListeners() {
+        Bukkit.getPluginManager().registerEvents(new IslandCreationEventListener(), this);
     }
 }
